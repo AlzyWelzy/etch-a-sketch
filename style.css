@@ -1,8 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap");
 
 :root {
-  --primary-dark: #333;
-  --primary-light: #ededed;
+  --primary-dark: #212529;
+  --primary-light: #e9ecef;
   --secondary-light: #fefefe;
 }
 
@@ -12,4 +12,73 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+  font-size: 1.6rem;
+  line-height: 1.5;
+  color: var(--primary-light);
+  background-color: var(--primary-dark);
+}
+
+.header {
+  padding: 3rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.title {
+  font-size: 5rem;
+  font-weight: 700;
+  color: var(--primary-light);
+  margin: auto auto;
+  /* text-align: center; */
+}
+
+.main {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.settings {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 60rem;
+  height: 60rem;
+  gap: 1.5rem;
+}
+
+.grid {
+  width: 60rem;
+  height: 60rem;
+  background-color: var(--secondary-light);
+}
+
+.footer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 0.2rem;
+}
+
+.author:link,
+.author:visited {
+  color: var(--primary-light);
+  text-decoration: none;
+}
+
+.author:hover {
+  color: var(--secondary-light);
 }
