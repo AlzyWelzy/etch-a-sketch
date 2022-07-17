@@ -24,6 +24,7 @@ body {
   line-height: 1.5;
   color: var(--primary-light);
   background-color: var(--primary-dark);
+  /* max-width: 100vh; */
 }
 
 .header {
@@ -46,7 +47,7 @@ body {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  max-height: 100vh;
+  max-height: 60rem;
   gap: 25rem;
 }
 
@@ -55,7 +56,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  max-width: 60rem;
+  max-width: 60vh;
   max-height: 60rem;
   gap: 2rem;
 }
@@ -88,12 +89,11 @@ body {
 }
 
 .footer {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
+  text-align: center;
   letter-spacing: 0.2rem;
   margin-top: 15rem;
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
 
 .author:link,
