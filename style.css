@@ -1,8 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap");
 
 :root {
-  --primary-dark: #212529;
-  --primary-light: #e9ecef;
+  --primary-dark: #333;
+  --primary-light: #ededed;
   --secondary-light: #fefefe;
 }
 
@@ -15,40 +15,55 @@
 }
 
 html {
-  font-size: 62.5%;
+  /* footer support */
+  position: relative;
+  min-height: 100%;
 }
 
 body {
+  background-color: var(--primary-light);
+  color: var(--primary-dark);
   font-family: "Rubik", sans-serif;
-  font-size: 1.6rem;
-  line-height: 1.5;
-  color: var(--primary-light);
-  background-color: var(--primary-dark);
-  /* max-width: 100vh; */
+  line-height: 1.6;
+  /* footer support */
+  margin-bottom: 100px;
 }
 
+h1 {
+  line-height: 1.2;
+}
+
+button,
+input {
+  width: 100%;
+  border: none;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+  outline: none;
+}
+
+/* HEADER */
+
 .header {
-  padding: 3rem 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-left: 38.7rem;
+  padding: 30px 0;
 }
 
 .title {
-  font-size: 5rem;
-  font-weight: 700;
-  color: var(--primary-light);
-  margin: auto auto;
+  text-align: center;
+  font-size: 80px;
 }
+
+/* MAIN */
 
 .main {
   display: flex;
-  flex-direction: row;
   align-items: center;
-  justify-content: center;
-  max-height: 60rem;
-  gap: 25rem;
+  justify-content: flex-start;
+  gap: 100px;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
 .settings {
@@ -56,48 +71,135 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  max-width: 60vh;
-  max-height: 60rem;
-  gap: 2rem;
+  gap: 30px;
+  width: 200px;
 }
 
-#colorPicker {
-  width: 15rem;
-  height: 5rem;
-  border: 1px solid var(--primary-light);
-  border-radius: 0.5rem;
+button {
+  padding: 10px 20px;
+  border: 1px solid var(--primary-dark);
+  border-radius: 5px;
 }
 
-.settings button {
-  width: 15rem;
-  height: 4.5rem;
-  color: var(--primary-light);
+button.active {
   background-color: var(--primary-dark);
-  border: 1px solid var(--primary-light);
-  border-radius: 0.5rem;
-  font-size: 1.5rem;
+  color: var(--primary-light);
 }
 
-.settings button:hover {
-  cursor: pointer;
+button,
+input[type="color"] {
+  transition: transform 0.1s ease-in-out;
+}
+
+button:hover,
+input[type="color"]:hover {
+  transform: scale(1.05);
+}
+
+input[type="color"]:active {
+  transition: transform 0.05s ease-in-out;
+  transform: scale(1);
+}
+
+input[type="color"] {
+  -webkit-appearance: none;
+  width: 80px;
+  height: 80px;
+  border: none;
+}
+
+.size-value {
+  margin-bottom: -20px;
+  font-size: 20px;
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  background-color: var(--primary-light);
 }
 
 .grid {
-  width: 60rem;
-  height: 60rem;
+  display: grid;
+  width: 500px;
+  height: 500px;
   background-color: var(--secondary-light);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
+
+.grid-element {
+  user-select: none;
+}
+
+/* FOOTER */
 
 .footer {
-  text-align: center;
-  letter-spacing: 0.2rem;
-  margin-top: 15rem;
-  margin-bottom: 0;
-  padding-bottom: 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 10px;
+  font-size: 20px;
 }
 
-.author:link,
-.author:visited {
-  color: var(--primary-light);
+.fa-github {
+  color: var(--primary-dark);
+  font-size: 24px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.fa-github:hover {
+  transform: rotate(360deg) scale(1.2);
+}
+
+.author {
+  color: var(--primary-dark);
+  font-size: 20px;
   text-decoration: none;
+}
+
+/* MEDIA QUERIES */
+
+@media (max-width: 1200px) {
+  .main {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 850px) {
+  .main {
+    gap: 50px;
+  }
+
+  .settings {
+    width: 150px;
+    gap: 16px;
+  }
+
+  .size-value {
+    margin-bottom: -4px;
+  }
+
+  .grid {
+    width: 400px;
+    height: 400px;
+  }
+}
+
+@media (max-width: 650px) {
+  .title {
+    font-size: 50px;
+  }
+
+  .main {
+    flex-direction: column-reverse;
+  }
+
+  .grid {
+    width: 300px;
+    height: 300px;
+  }
 }
